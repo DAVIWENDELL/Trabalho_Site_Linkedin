@@ -55,6 +55,42 @@ input[type=submit]:hover {
     cursor: pointer;
 }
 
+button[type="social"] {
+    background: linear-gradient(to right,#fcfcfc, #ffffff);
+    border-radius: 30px;
+    width: 100%;
+    outline: none;
+    padding: 10px 0 10px 15px;
+    font-size: 15px;
+    margin-top: 0px;
+    cursor: pointer;
+
+}
+
+.socialconecta img {
+    width: 23px;
+    height: 23px;
+}
+
+.socialconecta {
+    position: ra;
+    display: inline-block;
+    margin-top: 0px;
+    transition: .5s;
+    width: 300px;
+    height: 40px;
+}
+
+.img-social{
+    display: flex;
+    margin-top: -32px;
+    margin-left: 50px;
+}
+
+#lado {
+    left: 33px; 
+}
+
 select {
     width: 160px;
 
