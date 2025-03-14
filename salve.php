@@ -1,22 +1,27 @@
 <?php
-if(isset($_POST['email']) && isset($_POST['senha'])){
+if(isset($_POST['Entrar'])){
 
 $email = $_POST['email'];
 $senha = $_POST['senha'];
+}
 
-$arquivo = fopen('dados.txt','a');
+$host = "localhost";
+$banco = "formulario";
+$user = "root";
+$senha_user = "";
 
-            if($arquivo){
+$con = mysql_connect($host, $user, $senha_user, $banco,);
 
-                    fwrite($arquivo,$email."-".$senha."\n");
-                    fclose($arquivo);
+if(!$con) {
+    die(" Conexão falhou." . mysqli_connect_error());
+}
 
-                    echo "<p>Obrigado por Fazer o Login</p>"
-            }else{
+$sql = "INSERT INTO formulario(Email, Senha) VALUES('$email', '$senha')";
 
-                cho "<p>Erro ao fazer o login</p>"
-            }
+$rs = mysqli_query($con, $sql);
+
+if($rs){
+    echo " Você foi logado com sucesso";
 }
 
 ?>
-<a href="index.html">Voltar</a>
